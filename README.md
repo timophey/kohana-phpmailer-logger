@@ -1,2 +1,2 @@
 # kohana-phpmailer-logger
-log collector for kohana-phpmailer
+log collector and viewer for [kohana-phpmailer](https://github.com/timophey/kohana-phpmailer)

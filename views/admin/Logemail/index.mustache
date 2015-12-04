@@ -1,0 +1,24 @@
+<table class="tim_tbl">
+	<thead>
+		<tr>
+			<td>datetime</td>
+			<td>emails to</td>
+			<td>subject</td>
+			<td>attachment</td>
+			<td>result</td>
+			<td>error</td>
+		</tr>
+	</thead>
+	<tbody>
+	{{#items}}{{#timestamp}}
+		<tr>
+			<td>{{datetime}}</td>
+			<td>{{#email_to}}<div>{{1}} &lt;{{0}}&gt;</div>{{/email_to}}</td>
+			<td>{{subject}}</td>
+			<td>{{#attachment}}<div><a href="/{{0}}" target="_blank">{{2}}</a></div>{{/attachment}}</td>
+			<td>{{#result}}<span style="color:green;">OK</span>{{/result}}{{#result_false}}<span style="color:red;">BAD</span>{{/result_false}}</td>
+			<td>{{error}}</td>
+		</tr>
+	{{/timestamp}}{{/items}}
+	</tbody>
+</table>
