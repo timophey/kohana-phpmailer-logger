@@ -20,7 +20,7 @@ class Controller_Admin_Logemail extends Controller_Admin_Common {
 				}
 			}
 		// get list of days
-		$filelist = glob(APPPATH.'logs/email/*/*.log'); $daylist=[];
+		$filelist = glob(APPPATH.'logs/email/*/*.log'); $daylist=[]; rsort($filelist);
 		if($filelist) foreach($filelist as $path){
 			preg_match('/^(\/.*)*\/(\\d{4})_(\\d{2})\/(\\d{2})\.log$/',$path,$p);
 			$p[5] = ([$y,$m,$d] == [$p[2],$p[3],$p[4]]); // active flag
