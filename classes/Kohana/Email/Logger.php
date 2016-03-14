@@ -9,6 +9,7 @@ class Kohana_Email_Logger extends Kohana_Email{
 		$logdata = [
 			'timestamp'=>time(),
 			'email_to'=>$m->getToAddresses(),
+			'sender'=>$m->Sender,
 			'subject'=>$m->Subject,
 			'attachment'=>$m->getAttachments(),
 			'result'=>$result,
