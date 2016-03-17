@@ -9,13 +9,16 @@ class Kohana_Email_Logger extends Kohana_Email{
 		$logdata = [
 			'timestamp'=>time(),
 			'email_to'=>$m->getToAddresses(),
-			'sender'=>$m->Sender,
+			//'sender'=>$m->Sender,
+			'sender'=>$m->From.' '.'<'.$m->FromName.'>',			
+			'config'=>$this->_config_name,
 			'subject'=>$m->Subject,
 			'attachment'=>$m->getAttachments(),
 			'result'=>$result,
 			'result_false'=>!$result,
 			'error'=>$m->ErrorInfo
 			];
+		//profilertoolbar::adddata($m,'Kohana_Email_Logger');
 		// write logfile
 		$dir = APPPATH.'logs/email/'.date('Y_m'); if(!file_exists($dir)) mkdir($dir,0775,true);
 		$file = date('d').'.log';
